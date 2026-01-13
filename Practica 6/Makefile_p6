@@ -1,0 +1,22 @@
+#   Autores: Rubén Martín González NIP:841886	
+#            Sergio Salesa Quintanilla NIP:811019 
+
+CC=g++
+CPPFLAGS=-I. -g -std=c++11      #opciones de compilación
+RM=rm -f
+
+all:main
+#-----------------------------------------------------------
+# Compilacion
+main.o: main.cpp 
+	${CC} -c ${CPPFLAGS} main.cpp 
+#-----------------------------------------------------------
+# Linkado
+main: main.o  
+	${CC} main.o -o main
+#-----------------------------------------------------------	
+# LIMPIEZA de todo lo generado. OjO: se borrarán sin preguntar
+# RM es una de las variables predefinidas en make: invoca borrado de fichero del SO
+clean:
+	${RM} main main.o 
+
